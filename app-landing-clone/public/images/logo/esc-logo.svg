@@ -1,0 +1,12 @@
+<svg width="600" height="300" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M338.15 231.45H440.71V258.63H380.22V275.54H440.71V302.72H338.15V231.45Z" fill="black"/>
+  <path d="M514.81 302.72L514.87 231.45H553.76L597.01 302.72H554.94L543.63 283.98H524.89L520.29 302.72H514.81ZM534.44 259.98L528.11 274.53H540.77L534.44 259.98Z" fill="black"/>
+  <path d="M464.47 231.45H482.49C498.57 231.45 505.51 238.39 505.51 252.02C505.51 265.65 498.57 272.59 482.49 272.59H464.47V231.45ZM464.47 272.59V302.72H448.39V231.45H464.47V272.59Z" fill="black"/>
+  <path d="M546.05 231.45V258.63H486.07V231.45H546.05Z" fill="black"/>
+  <path d="M546.05 275.54V302.72H486.07V275.54H546.05Z" fill="black"/>
+  <path d="M438.29 231.45V258.63H378.31V231.45H438.29Z" fill="black"/>
+  <path d="M438.29 275.54V302.72H378.31V275.54H438.29Z" fill="black"/>
+  <path d="M329.33 231.45V258.63H268.95V231.45H329.33Z" fill="black"/>
+  <path d="M329.33 275.54V302.72H268.95V275.54H329.33Z" fill="black"/>
+  <text x="300" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="bold" letter-spacing="10" fill="black">W E A R</text>
+</svg>

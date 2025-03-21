@@ -1,0 +1,352 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseSlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes draw {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Scroll-triggered animations */
+@keyframes fadeInScroll {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUpScroll {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Logo Animation */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes scaleUp {
+  0% { transform: scale(0.5); }
+  100% { transform: scale(1); }
+}
+
+@keyframes draw {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes draw-delay {
+  0% { stroke-dashoffset: 1000; }
+  30% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes slideUpLogo {
+  0% { transform: translateY(100px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Slogan Animation */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinkCursor {
+  from { border-right-color: rgba(0, 0, 0, 0.75); }
+  to { border-right-color: transparent; }
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slogan-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.slogan-text {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid rgba(0, 0, 0, 0.75);
+  animation:
+    typewriter 2.5s steps(20, end) 1s 1 normal both,
+    blinkCursor 0.75s step-end infinite;
+}
+
+.slogan-word {
+  display: inline-block;
+  animation: fadeSlideUp 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.slogan-word-1 {
+  animation-delay: 1.5s;
+}
+
+.slogan-word-2 {
+  animation-delay: 2s;
+}
+
+.slogan-word-3 {
+  animation-delay: 2.5s;
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 1.2s ease-in-out forwards;
+  }
+
+  .animate-slideUp {
+    animation: slideUp 1s ease-out forwards;
+  }
+
+  .animate-bounce-slow {
+    animation: bounceSlow 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulseSlow 4s ease-in-out infinite;
+  }
+
+  .animate-draw {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: draw 1.5s ease-in-out forwards;
+  }
+
+  .animate-draw-delay {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: draw 1.5s ease-in-out 0.3s forwards;
+  }
+
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  /* Scroll-triggered animations classes */
+  .animate-fadeIn-scroll {
+    animation: fadeInScroll 1s ease-in-out both;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+  }
+
+  .animate-slideUp-scroll {
+    animation: slideUpScroll 1s ease-out both;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+  }
+
+  .animate-slideIn-right {
+    animation: slideInRight 1s ease-out both;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 1s ease-out both;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+  }
+
+  /* ESC Logo Animation */
+  .esc-logo-animation {
+    animation: fadeIn 1s ease-in-out, scaleUp 1.5s ease-in-out;
+  }
+
+  .esc-logo-animation path {
+    animation: draw 2s forwards;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+
+  .esc-logo-fade-out {
+    animation: fadeOut 1s ease-in-out forwards;
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+
+  .animate-slideUp {
+    animation: slideUp 1s ease-in-out forwards;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+
+  .animate-draw {
+    animation: draw 1.5s forwards;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+
+  .animate-draw-delay {
+    animation: draw-delay 2s forwards;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  /* Scroll-triggered animations */
+  .animate-fadeIn-scroll {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards paused;
+  }
+
+  .animate-slideUp-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s, transform 1s;
+  }
+
+  .animate-slideIn-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 1s, transform 1s;
+  }
+
+  .animate-scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 1s, transform 1s;
+  }
+}
