@@ -3,7 +3,7 @@ const nextConfig = {
   /* config options here */
   distDir: process.env.NODE_ENV === "production" ? "build" : ".next",
   images: {
-    unoptimized: true,
+    // Remove unoptimized flag to use Next.js image optimization
     domains: [
       "source.unsplash.com",
       "images.unsplash.com",

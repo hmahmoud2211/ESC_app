@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Minus, Plus, X, ShoppingBag } from 'lucide-react';
+import SafeImage from '@/components/SafeImage';
 
 // Mock cart items
 const initialCartItems = [
@@ -106,12 +107,21 @@ export default function CartPage() {
                   {cartItems.map((item) => (
                     <li key={item.id} className="py-6 flex flex-wrap md:flex-nowrap">
                       <div className="w-full md:w-24 h-24 bg-gray-100 rounded-md relative overflow-hidden mb-4 md:mb-0">
-                        <Image
-                          src={item.image}
-                          alt={item.name}
-                          fill
-                          className="object-cover"
-                        />
+                        {item.id === 2 ? (
+                          <SafeImage
+                            src={item.image}
+                            alt={item.name}
+                            fill
+                            className="object-cover"
+                          />
+                        ) : (
+                          <Image
+                            src={item.image}
+                            alt={item.name}
+                            fill
+                            className="object-cover"
+                          />
+                        )}
                       </div>
 
                       <div className="flex-1 md:ml-6">

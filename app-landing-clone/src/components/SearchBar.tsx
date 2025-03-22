@@ -5,6 +5,7 @@ import { Search, X } from 'lucide-react';
 import { Button } from './ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
+import SafeImage from './SafeImage';
 
 interface SearchBarProps {
   isOpen: boolean;
@@ -120,12 +121,21 @@ export default function SearchBar({ isOpen, onClose }: SearchBarProps) {
                   <li key={product.id} className="py-2">
                     <Link href={`/products/${product.id}`} className="flex items-center hover:bg-gray-50 p-2 rounded-lg" onClick={onClose}>
                       <div className="w-16 h-16 bg-gray-100 rounded-md relative overflow-hidden">
-                        <Image
-                          src={product.image}
-                          alt={product.name}
-                          fill
-                          className="object-cover"
-                        />
+                        {(product.id === 2 || product.id === 3 || product.id === 4) ? (
+                          <SafeImage
+                            src={product.image}
+                            alt={product.name}
+                            fill
+                            className="object-cover"
+                          />
+                        ) : (
+                          <Image
+                            src={product.image}
+                            alt={product.name}
+                            fill
+                            className="object-cover"
+                          />
+                        )}
                       </div>
                       <div className="ml-4 flex-1">
                         <p className="font-medium">{product.name}</p>

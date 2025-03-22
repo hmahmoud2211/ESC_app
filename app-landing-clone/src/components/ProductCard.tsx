@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SafeImage from "./SafeImage";
 
 interface ProductCardProps {
   name: string;
@@ -12,7 +12,7 @@ export function ProductCard({ name, price, imageSrc, animationDelay = "0ms" }: P
     <div className="group animate-fadeIn-scroll" style={{ animationDelay }}>
       <div className="bg-gray-200 h-40 md:h-64 rounded-lg mb-2 relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image
+          <SafeImage
             src={imageSrc}
             alt={name}
             fill

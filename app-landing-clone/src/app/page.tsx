@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ProductCard } from "@/components/ProductCard";
-import Header from "@/components/Header";
 import { useAnimation } from "@/context/AnimationContext";
 
 export default function Home() {
@@ -59,9 +58,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-zinc-50 relative" ref={scrollRef}>
-      {/* Use the Header component */}
-      <Header />
-
       {/* ESC Logo Animation Screen - Fixed position when showing */}
       {!showContent && (
         <div className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center">
@@ -96,8 +92,8 @@ export default function Home() {
           <div className="relative w-full min-h-[80vh] bg-gray-100">
             <div className="absolute inset-0 w-full h-full">
               <Image
-                src="/images/So_photos/intro2.jpg"
-                alt="Modest Sportswear Collection"
+                src="/images/hero/hero-banner.jpg"
+                alt="Modest Desert Collection"
                 fill
                 priority
                 style={{ objectFit: 'cover', objectPosition: 'center' }}
@@ -177,7 +173,7 @@ export default function Home() {
                   <CardHeader className="p-0">
                     <div className="h-48 relative overflow-hidden">
                       <Image
-                        src="/images/So_photos/intro2.jpg"
+                        src="/images/collections/training.jpg"
                         alt="Training Collection"
                         fill
                         style={{objectFit: 'cover'}}
@@ -200,8 +196,8 @@ export default function Home() {
                   <CardHeader className="p-0">
                     <div className="h-48 relative overflow-hidden">
                       <Image
-                        src="/images/So_photos/card_try.jpg"
-                        alt="Running Collection"
+                        src="/images/collections/running.jpg"
+                        alt="Gym Outfits Collection"
                         fill
                         style={{objectFit: 'cover'}}
                         className="transition-transform duration-500 hover:scale-110"
@@ -209,13 +205,13 @@ export default function Home() {
                     </div>
                   </CardHeader>
                   <CardContent className="pt-6">
-                    <CardTitle className="mb-2">Sports Hijabs</CardTitle>
+                    <CardTitle className="mb-2">Gym Outfits</CardTitle>
                     <CardDescription>
-                      Breathable, secure sports hijabs that stay in place during any activity.
+                      Stylish and comfortable modest gym outfits for your workout sessions.
                     </CardDescription>
                   </CardContent>
                   <CardFooter>
-                    <Button variant="outline" className="w-full hover:bg-black hover:text-white transition-colors">Shop Hijabs</Button>
+                    <Button variant="outline" className="w-full hover:bg-black hover:text-white transition-colors">Shop Outfits</Button>
                   </CardFooter>
                 </Card>
 
@@ -223,8 +219,8 @@ export default function Home() {
                   <CardHeader className="p-0">
                     <div className="h-48 relative overflow-hidden">
                       <Image
-                        src="/images/So_photos/intro.jpg"
-                        alt="Lifestyle Collection"
+                        src="/images/collections/lifestyle.jpg"
+                        alt="Veiled Collection"
                         fill
                         style={{objectFit: 'cover'}}
                         className="transition-transform duration-500 hover:scale-110"
@@ -232,13 +228,13 @@ export default function Home() {
                     </div>
                   </CardHeader>
                   <CardContent className="pt-6">
-                    <CardTitle className="mb-2">Modest Athleisure</CardTitle>
+                    <CardTitle className="mb-2">Veiled Collection</CardTitle>
                     <CardDescription>
-                      Stylish, comfortable modest wear that transitions seamlessly from workout to everyday life.
+                      Elegant, modest hijabs and accessories in a variety of colors and fabrics.
                     </CardDescription>
                   </CardContent>
                   <CardFooter>
-                    <Button variant="outline" className="w-full hover:bg-black hover:text-white transition-colors">Shop Athleisure</Button>
+                    <Button variant="outline" className="w-full hover:bg-black hover:text-white transition-colors">Shop Veiled</Button>
                   </CardFooter>
                 </Card>
               </div>
@@ -252,25 +248,25 @@ export default function Home() {
                 <ProductCard
                   name="Sports Hijab Hoodie"
                   price="$59.99"
-                  imageSrc="/images/So_photos/so1.jpg"
+                  imageSrc="/images/products/product-1.jpg"
                   animationDelay="100ms"
                 />
                 <ProductCard
                   name="Modest Running Set"
                   price="$59.99"
-                  imageSrc="/images/So_photos/so2.jpg"
+                  imageSrc="/images/products/product-5.jpg"
                   animationDelay="200ms"
                 />
                 <ProductCard
                   name="Modest Yoga Set"
                   price="$59.99"
-                  imageSrc="/images/So_photos/So3.jpg"
+                  imageSrc="/images/products/product-2.jpg"
                   animationDelay="300ms"
                 />
                 <ProductCard
-                  name="Athletic Set"
+                  name="Athletic Swim Set"
                   price="$59.99"
-                  imageSrc="/images/So_photos/So4.jpg"
+                  imageSrc="/images/products/product-6.jpg"
                   animationDelay="400ms"
                 />
               </div>
